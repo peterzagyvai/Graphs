@@ -1,7 +1,7 @@
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.tools.Tool;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Display extends JFrame {
 
@@ -28,7 +28,19 @@ public class Display extends JFrame {
 
 
     private class MainPanel extends JPanel{
+
+        Graph graph;
+
         public MainPanel() {
+            graph = new Graph();
+        }
+
+        @Override
+        public void paint(Graphics g) {
+            Graphics2D g2d = (Graphics2D)g;
+
+            graph.drawGraph(g2d);
+
         }
     }
 
